@@ -1,14 +1,13 @@
 {% extends 'layout.html.twig' %}
-{% set increment = 1 %}
+
 {% block body %}
 
     <h2>News title</h2>
     <hr>
 
     {% for article in articles %}
-        {{ increment }}
+        {{ loop.index }}
         <a href="{{ path('articlepages', {id: article.id}) }}">{{  article.title }}</a>  <hr>
-        {% set increment = increment + 1 %}
         {% endfor %}
 
 {% endblock %}
